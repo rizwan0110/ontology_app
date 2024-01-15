@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontology Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    .myLink {display: none}
+    </style>
+</head>
+<body >
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b> KR & SW Project</b> &nbsp; &nbsp;<img src="{{ image }}"  style="width:10%; border: 2px solid white;" ></a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+          <a href="http://127.0.0.1:5000/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+          <a href="{{ url_for('regions_main') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EXPLORE BY REGIONS</a>
+          <a href="{{ url_for('destinations') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DESTINATION</a>
+          <a href="http://127.0.0.1:5000/attraction" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ATTRACTIONS</a>  
+          <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"></a>
+        </div>
+      </div>
+  
+      <!-- Header -->
+
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    <img class="w3-image" src="{{ image_main }}" alt="Germany" width="1500" height="700">
+    <div class="w3-display-middle" style="width:60%">
+      <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Search');"><i class="fa fa-search">&nbsp;&nbsp;</i>Tourism Search</button>
+        
+        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Regions');"><i class="fa fa-plane w3-margin-right"></i>Explore By Regions</button>
+      </div>
+  
+      <!-- Tabs -->
+      
+      <div id="Search" class="w3-container w3-white w3-padding-16 myLink">
+        <h3>Travel the Germany with us</h3>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half">
+          
+    <form action="/search" method="post">
+        <label for="attraction_type">Select Attraction Type:</label>
+        <select name="attraction_type" id="attraction_type">
+            <option value="historical_cultural">Understand the past and Heritage</option>
+            <option value="events_festival">Enjoy the creative events and colourful festival</option>
+            <option value="natural_attractions">Capture the natural beauty and attractions</option>
+            <option value="city">Explore the vibrant cities</option>
+            <option value="museum">Visit the museums and educational sites</option>
+            <option value="desert">Back Water Tourism</option>
+        </select>
+        <p><button type="submit" class="w3-button w3-dark-grey">Search</button></p>
+    </form>
+        </div></div></div>
+      
+        
+      <div id="Regions" class="w3-container w3-white w3-padding-16 myLink">
+        <h3>Discover Diverse Wonders</h3>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-half">
+        
+              <button class="w3-button w3-dark-grey"><a href="http://127.0.0.1:5000/region/northern_germany" >Northern Germany</a></button>
+              <button class="w3-button w3-dark-grey"><a href="http://127.0.0.1:5000/region/eastern_germany" >Eastern Germany</a></button></br></br>
+              <button class="w3-button w3-dark-grey"><a href="http://127.0.0.1:5000/region/western_germany" >Western Germany</a></button>
+              <button class="w3-button w3-dark-grey"><a href="http://127.0.0.1:5000/region/southern_germany" >Southern Germany</a></button></br></br>
+      </div>  
+    </div></div>
+  </header>
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+  <div class="w3-row-padding" id="about">
+    <div class="w3-col l4 12">
+      
+      <h3>{{ label }}</h3>
+    <p style="text-align: justify;" >{{ description }}</p>
+    
+    <h6 style="font-weight: bold;">Country Code: {{ countryCode }}</h6>
+    <h6 style="font-weight: bold;">Currency: {{ currency }}</h6>
+    <h6 style="font-weight: bold;">Time Zone: {{ timeZone }}</h6>
+    <h6 style="font-weight: bold;">Visa Requirement: {{ visareq }}</h6>
+      
+    </div>
+    <div class="w3-col l8 12"></br>
+      <!-- Image of location/map -->
+      <img src="{{ image }}"  style="width:100%;"></br></br>
+    </div>
+  </div></div>
+</div>
+    </br</br>
+    <div>
+    
+</div>
+
+<div class="w3-container">
+    <button class="w3-button w3-block w3-black w3-margin-bottom"><h3>Our Regions</h3>
+    <h6>You can find our Regions anywhere in the Germany:</h6></button>
+  </div>
+  
+  <div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="{{ german_map }}" alt="GERMANY" style="width:100%; height:500px;">
+        <span class="w3-display-bottomleft w3-padding">GERMANY</span>
+      </div>
+    </div>
+    
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{{ northgermany_img }}" alt="NORTH GERMANY" style="width:100%">
+            <a href="http://127.0.0.1:5000/region/northern_germany"><span  style="font-weight: bold; color: black;">NORTH GERMANY</span></a>
+           
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{{ southgermany_img }}" alt="SOUTH GERMANY" style="width:100%">
+            <a href="http://127.0.0.1:5000/region/southern_germany"><span style="font-weight: bold; color: black;">SOUTH GERMANY</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{{ westgermany_img }}" alt="WESTERN GERMANY" style="width:100%">
+            <a href="http://127.0.0.1:5000/region/western_germany"><span style="font-weight: bold; color: black;">WESTERN GERMANY</span></a>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{{ eastgermany_img }}" alt="EASTERN GERMANY" style="width:100%">
+            <a href="http://127.0.0.1:5000/region/eastern_germany"><span style="font-weight: bold; color: black;">EASTERN GERMANY</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+    <h4><b>Knowledge Representation Semantic Web Project</b></h4>
+   
+    <p>Created by <b>Group 12</b></a></p>
+  </footer>
+
+    <script>
+        // Tabs
+        function openLink(evt, linkName) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName("myLink");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+          }
+          document.getElementById(linkName).style.display = "block";
+          evt.currentTarget.className += " w3-red";
+        }
+        
+        // Click on the first tablink on load
+        document.getElementsByClassName("tablink")[0].click();
+        </script>
+        
+</body>
+</html>

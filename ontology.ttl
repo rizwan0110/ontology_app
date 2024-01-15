@@ -1,0 +1,654 @@
+@prefix : <http://www.kr_paris.com/ontologies/tourism#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.kr_paris.com/ontologies/tourism#> .
+
+<http://www.kr_paris.com/ontologies/tourism> rdf:type owl:Ontology ;
+                                              rdfs:comment "This Ontology is Build By Group 12 for Tourism Website" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://dbpedia.org/ontology/capital
+dbo:capital rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/countryCode
+dbo:countryCode rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/cultureDescription
+dbo:cultureDescription rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/currency
+dbo:currency rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/description
+dbo:description rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/eastgermany_img
+dbo:eastgermany_img rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/german_map
+dbo:german_map rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/image
+dbo:image rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/image_main
+dbo:image_main rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/includesCity
+dbo:includesCity rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/includesStates
+dbo:includesStates rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/northgermany_img
+dbo:northgermany_img rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/southgermany_img
+dbo:southgermany_img rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/timeZone
+dbo:timeZone rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/visareq
+dbo:visareq rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/ontology/westgermany_img
+dbo:westgermany_img rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/depiction
+foaf:depiction rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://dbpedia.org/ontology/hasAttractionType
+dbo:hasAttractionType rdf:type owl:ObjectProperty ;
+                      rdfs:domain dbo:Attraction ;
+                      rdfs:range owl:Class .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Attraction
+dbo:Attraction rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/City
+dbo:City rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/Country
+dbo:Country rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/CountryInfo
+dbo:CountryInfo rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/Destination
+dbo:Destination rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/Region
+dbo:Region rdf:type owl:Class .
+
+
+###  http://dbpedia.org/ontology/State
+dbo:State rdf:type owl:Class .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#city
+:city rdf:type owl:Class ;
+      rdfs:subClassOf dbo:Attraction .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#events_festival
+:events_festival rdf:type owl:Class ;
+                 rdfs:subClassOf dbo:Attraction .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#historical_cultural
+:historical_cultural rdf:type owl:Class ;
+                     rdfs:subClassOf dbo:Attraction .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#museum
+:museum rdf:type owl:Class ;
+        rdfs:subClassOf dbo:Attraction .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#natural_attractions
+:natural_attractions rdf:type owl:Class ;
+                     rdfs:subClassOf dbo:Attraction .
+
+
+###  http://www.w3.org/2002/07/owl#Class
+owl:Class rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://group12.org/attractions/BavarianAlps
+<http://group12.org/attractions/BavarianAlps> rdf:type owl:NamedIndividual ,
+                                                       dbo:Attraction ;
+                                              dbo:hasAttractionType :historical_cultural ;
+                                              dbo:description "Skiing, hiking, and exploring picturesque alpine landscapes. " ;
+                                              rdfs:label "Bavarian Alps" ;
+                                              foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/c/c6/Bavarian_Alps_Wikivoyage_Banner.jpg> .
+
+
+###  http://group12.org/attractions/CulturalEvents
+<http://group12.org/attractions/CulturalEvents> rdf:type owl:NamedIndividual ,
+                                                         dbo:Attraction ;
+                                                dbo:hasAttractionType :events_festival ;
+                                                dbo:description "Attend cultural events like the Berlin International Film Festival (Berlinale) or classical music concerts." ;
+                                                rdfs:label "Cultural Events" ;
+                                                foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/4/42/Cultural_event_Umang_DIET_Raebareli.jpg> .
+
+
+###  http://group12.org/attractions/DresdenZwingerPalace
+<http://group12.org/attractions/DresdenZwingerPalace> rdf:type owl:NamedIndividual ,
+                                                               dbo:Attraction ;
+                                                      dbo:hasAttractionType :historical_cultural ;
+                                                      dbo:description "Baroque masterpiece housing art collections and beautiful gardens." ;
+                                                      rdfs:label "Dresden Zwinger Palace" ;
+                                                      foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/7/72/Dresden%2C_Zwinger%2C_Bogengalerie_--_2023_--_9333.jpg> .
+
+
+###  http://group12.org/attractions/FrankfurtPalmengarten
+<http://group12.org/attractions/FrankfurtPalmengarten> rdf:type owl:NamedIndividual ,
+                                                                dbo:Attraction ;
+                                                       dbo:hasAttractionType :city ;
+                                                       dbo:description "Botanical garden with a wide variety of plant species." ;
+                                                       rdfs:label "Frankfurt Palmengarten" ;
+                                                       foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/7/7e/Frankfurt_am_Main_Palmengarten_2022-04-17_05.jpg> .
+
+
+###  http://group12.org/attractions/HamburgHarbor
+<http://group12.org/attractions/HamburgHarbor> rdf:type owl:NamedIndividual ,
+                                                        dbo:Attraction ;
+                                               dbo:hasAttractionType :city ;
+                                               dbo:description "Europe's third-largest port with vibrant waterfront activities and attractions." ;
+                                               rdfs:label "Hamburg Harbor" ;
+                                               foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/a/a1/Hamburg-Harbor-by-eschenzweig.jpg> .
+
+
+###  http://group12.org/attractions/HeidelbergCastle
+<http://group12.org/attractions/HeidelbergCastle> rdf:type owl:NamedIndividual ,
+                                                           dbo:Attraction ;
+                                                  dbo:hasAttractionType :historical_cultural ;
+                                                  dbo:description "Ruins of a medieval castle overlooking the Neckar River." ;
+                                                  rdfs:label "Heidelberg Castle" ;
+                                                  foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/7/78/Ralf_Kuhlen_Heidelberg_Castle_Ottheinrichsbau_2021.jpg> .
+
+
+###  http://group12.org/attractions/LübeckHolstentor
+<http://group12.org/attractions/LübeckHolstentor> rdf:type owl:NamedIndividual ,
+                                                           dbo:Attraction ;
+                                                  dbo:hasAttractionType :historical_cultural ;
+                                                  dbo:description "Iconic city gate in the medieval city of Lübeck." ;
+                                                  rdfs:label "Lübeck Holstentor" ;
+                                                  foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/c/ca/Holstentor_in_L%C3%BCbeck_Frontseite_-_Zuschnitt.jpg> .
+
+
+###  http://group12.org/attractions/MuseumIsland
+<http://group12.org/attractions/MuseumIsland> rdf:type owl:NamedIndividual ,
+                                                       dbo:Attraction ;
+                                              dbo:hasAttractionType :historical_cultural ;
+                                              dbo:description "UNESCO-listed complex with several world-class museums, including the Pergamon Museum." ;
+                                              rdfs:label "Museum Island (Museumsinsel), Berlin" ;
+                                              foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/c/c1/Museum_Island%2C_Berlin_2017_015.jpg> .
+
+
+###  http://group12.org/attractions/MuseumfürNaturkunde
+<http://group12.org/attractions/MuseumfürNaturkunde> rdf:type owl:NamedIndividual ,
+                                                              dbo:Attraction ;
+                                                     dbo:hasAttractionType :museum ;
+                                                     dbo:description "Home to the world's tallest mounted dinosaur skeleton." ;
+                                                     rdfs:label "Berlin's Museum of Natural History (Museum für Naturkunde) " ;
+                                                     foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/d/df/Museum_f%C3%BCr_Naturkunde%2C_Berlin_%28Museum_of_Natural_History%29_-_panoramio.jpg> .
+
+
+###  http://group12.org/attractions/NurembergCastle
+<http://group12.org/attractions/NurembergCastle> rdf:type owl:NamedIndividual ,
+                                                          dbo:Attraction ;
+                                                 dbo:hasAttractionType :historical_cultural ;
+                                                 dbo:description "Historic castle complex with stunning views of the city." ;
+                                                 rdfs:label "Nuremberg Castle" ;
+                                                 foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/8/8a/Nuremberg_-_castle_15.JPG> .
+
+
+###  http://group12.org/attractions/RhineRiverCruise
+<http://group12.org/attractions/RhineRiverCruise> rdf:type owl:NamedIndividual ,
+                                                           dbo:Attraction ;
+                                                  dbo:hasAttractionType :natural_attractions ;
+                                                  dbo:description "Scenic boat trips along the picturesque Rhine River, passing vineyards and castles." ;
+                                                  rdfs:label "Rhine River Cruise" ;
+                                                  foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/7/78/Germania_Rhine_River_Cruise_Boat_-_Rudesheim_to_St_Goarshausen_%2823822955118%29.jpg> .
+
+
+###  http://group12.org/attractions/RomanticRoad
+<http://group12.org/attractions/RomanticRoad> rdf:type owl:NamedIndividual ,
+                                                       dbo:Attraction ;
+                                              dbo:hasAttractionType :natural_attractions ;
+                                              dbo:description "Scenic route through charming medieval towns and villages." ;
+                                              rdfs:label "Romantic Road" ;
+                                              foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/c/c1/RomanticRoad.jpg> .
+
+
+###  http://group12.org/attractions/SanssouciPalacePotsdam
+<http://group12.org/attractions/SanssouciPalacePotsdam> rdf:type owl:NamedIndividual ,
+                                                                 dbo:Attraction ;
+                                                        dbo:hasAttractionType :historical_cultural ;
+                                                        dbo:description "Rococo palace and gardens, a UNESCO World Heritage Site." ;
+                                                        rdfs:label "Sanssouci Palace, Potsdam" ;
+                                                        foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/6/60/Potsdam_-_Schloss_Sanssouci_mit_Weinberg_2005.jpg> .
+
+
+###  http://group12.org/attractions/StasiMuseum
+<http://group12.org/attractions/StasiMuseum> rdf:type owl:NamedIndividual ,
+                                                      dbo:Attraction ;
+                                             dbo:hasAttractionType :historical_cultural ;
+                                             dbo:description "Former Stasi prison providing insight into East German history." ;
+                                             rdfs:label "Gedenkstätte Berlin-Hohenschönhausen (Stasi Museum)r" ;
+                                             foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/6/6c/Gedenkst%C3%A4tte_Berlin_Hohensch%C3%B6nhausen_17072017_01.jpg> .
+
+
+###  http://group12.org/attractions/berlinwall
+<http://group12.org/attractions/berlinwall> rdf:type owl:NamedIndividual ,
+                                                     dbo:Attraction ;
+                                            dbo:hasAttractionType :historical_cultural ;
+                                            dbo:description "Iconic landmark and symbol of German reunification." ;
+                                            rdfs:label "The capital city with a vibrant cultural scene, historical landmarks (Brandenburg Gate, Berlin Wall), and world-class museums." ;
+                                            foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/b/bc/East_side_gallery%2C_Berlin_Wall_%28Ank_Kumar%2C_Infosys_Limited_%29_01.jpg> .
+
+
+###  http://group12.org/attractions/brandenburg-gate
+<http://group12.org/attractions/brandenburg-gate> rdf:type owl:NamedIndividual ,
+                                                           dbo:Attraction ;
+                                                  dbo:hasAttractionType :historical_cultural ;
+                                                  dbo:description "Iconic landmark and symbol of German reunification. " ;
+                                                  rdfs:label "Brandenburg Gate, Berlin" ;
+                                                  foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/3/3b/Brandenburg_Gate_-_Brandenburger_Tor_-_Berlin_-_Germany_-_02.jpg> .
+
+
+###  http://group12.org/attractions/colognecathedral
+<http://group12.org/attractions/colognecathedral> rdf:type owl:NamedIndividual ,
+                                                           dbo:Attraction ;
+                                                  dbo:hasAttractionType :historical_cultural ;
+                                                  dbo:description "Majestic Gothic cathedral on the banks of the Rhine River." ;
+                                                  rdfs:label "Cologne Cathedral (Kölner Dom" ;
+                                                  foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/0/05/Cologne_Cathedral%2C_Cologne%2C_Germany_%28Ank_Kumar%29_02.jpg> .
+
+
+###  http://group12.org/attractions/neuschwansteincastlebavaria
+<http://group12.org/attractions/neuschwansteincastlebavaria> rdf:type owl:NamedIndividual ,
+                                                                      dbo:Attraction ;
+                                                             dbo:hasAttractionType :historical_cultural ;
+                                                             dbo:description "Fairy-tale castle nestled in the Bavarian Alps." ;
+                                                             rdfs:label "Neuschwanstein Castle, Bavaria" ;
+                                                             foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/4/46/Castle_Neuschwanstein_by_Melancholie.jpg> .
+
+
+###  http://group12.org/attractions/oktoberfest
+<http://group12.org/attractions/oktoberfest> rdf:type owl:NamedIndividual ,
+                                                      dbo:Attraction ;
+                                             dbo:hasAttractionType :events_festival ;
+                                             dbo:description "World-famous beer festival with traditional Bavarian celebrations. " ;
+                                             rdfs:label "Oktoberfest, Munich" ;
+                                             foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/b/bb/Oktoberfest-Aufbau_2013_-_%288%29.JPG> .
+
+
+###  http://group12.org/destination/berchtesgaden
+<http://group12.org/destination/berchtesgaden> rdf:type owl:NamedIndividual ,
+                                                        dbo:Destination ;
+                                               dbo:description "A stunning alpine region with lakes, mountains, and the Eagle's Nest, Hitler's former mountain retreat ." ;
+                                               rdfs:label "Berchtesgaden National Park" ;
+                                               foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/5/54/Nationalpark_Berchtesgaden%2C_Zwischen_Falzalm_und_Watzmannhaus.jpg> .
+
+
+###  http://group12.org/destination/blackForest
+<http://group12.org/destination/blackForest> rdf:type owl:NamedIndividual ,
+                                                      dbo:Destination ;
+                                             dbo:description "A region known for its dense forests, charming villages, cuckoo clocks, and the scenic Triberg Waterfalls." ;
+                                             rdfs:label "Black Forest (Schwarzwald)" ;
+                                             foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/e/ef/Schwarzwald_Hinterzarten_01.jpg> .
+
+
+###  http://group12.org/destination/cologne
+<http://group12.org/destination/cologne> rdf:type owl:NamedIndividual ,
+                                                  dbo:Destination ;
+                                         dbo:description "Famous for its iconic cathedral (Cologne Cathedral), historic old town, and the Rhine River." ;
+                                         rdfs:label "Cologne (Köln)" ;
+                                         foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/2/2a/Cologne_montage.png> .
+
+
+###  http://group12.org/destination/culturaroutes
+<http://group12.org/destination/culturaroutes> rdf:type owl:NamedIndividual ,
+                                                        dbo:Destination ;
+                                               dbo:description "Explore the Romantic Road, a scenic route through charming villages and towns, or the Castle Road, featuring numerous historic castles." ;
+                                               rdfs:label "Cultural Routes" ;
+                                               foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/d/d1/20070602_South_Shore_Cultural_Center.JPG> .
+
+
+###  http://group12.org/destination/dresen
+<http://group12.org/destination/dresen> rdf:type owl:NamedIndividual ,
+                                                 dbo:Destination ;
+                                        dbo:description "Famous for its Baroque architecture, including the Zwinger Palace and the Frauenkirche." ;
+                                        rdfs:label "Dresden" ;
+                                        foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/a/ae/Dresden_photochrom2.jpg> .
+
+
+###  http://group12.org/destination/frankfurt
+<http://group12.org/destination/frankfurt> rdf:type owl:NamedIndividual ,
+                                                    dbo:Destination ;
+                                           dbo:description "The financial hub of Germany with a modern skyline, historic Römer square, and the Palmengarten botanical garden." ;
+                                           rdfs:label "Frankfurt" ;
+                                           foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/e/eb/Frankfurt_Skyline_2022_bei_Nacht.jpg> .
+
+
+###  http://group12.org/destination/heidelberg
+<http://group12.org/destination/heidelberg> rdf:type owl:NamedIndividual ,
+                                                     dbo:Destination ;
+                                            dbo:description "A picturesque town with a well-preserved castle, historic university, and charming Old Town." ;
+                                            rdfs:label "Heidelberg" ;
+                                            foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/9/91/Heidelberg.Yo3.jpg> .
+
+
+###  http://group12.org/destination/munich
+<http://group12.org/destination/munich> rdf:type owl:NamedIndividual ,
+                                                 dbo:Destination ;
+                                        dbo:description "Known for its Bavarian charm, Oktoberfest, historic architecture (Nymphenburg Palace), and cultural attractions." ;
+                                        rdfs:label "Munich" ;
+                                        foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/4/48/Munich_skyline.jpg> .
+
+
+###  http://group12.org/destination/neuschwansteincastle
+<http://group12.org/destination/neuschwansteincastle> rdf:type owl:NamedIndividual ,
+                                                               dbo:Destination ;
+                                                      dbo:description "A fairy-tale castle in Bavaria, often considered the inspiration for Disney's Cinderella Castle." ;
+                                                      rdfs:label "Neuschwanstein Castle" ;
+                                                      foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/a/ae/Castle_Neuschwanstein.jpg> .
+
+
+###  http://group12.org/destination/nuremberg
+<http://group12.org/destination/nuremberg> rdf:type owl:NamedIndividual ,
+                                                    dbo:Destination ;
+                                           dbo:description "Known for its medieval architecture, the Imperial Castle, and the historic Christmas Market." ;
+                                           rdfs:label "Nuremberg (Nürnberg)" ;
+                                           foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/5/52/Nuremberg%2C_view_from_Sinwell_Tower_2012.06.16_-_panoramio.jpg> .
+
+
+###  http://group12.org/destination/rhinevalley
+<http://group12.org/destination/rhinevalley> rdf:type owl:NamedIndividual ,
+                                                      dbo:Destination ;
+                                             dbo:description "A picturesque area with vineyards, castles, and charming towns along the Rhine River." ;
+                                             rdfs:label "Rhine Valley" ;
+                                             foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/2/2d/Rhine_River_at_Lorelei_Middle_Rhine_valley_Germany.jpg> .
+
+
+###  http://group12.org/destination/rothenburg
+<http://group12.org/destination/rothenburg> rdf:type owl:NamedIndividual ,
+                                                     dbo:Destination ;
+                                            dbo:description "A well-preserved medieval town with cobblestone streets, half-timbered houses, and the medieval Crime Museum." ;
+                                            rdfs:label "Rothenburg ob der Tauber" ;
+                                            foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/1/11/Rothenburg_ob_der_Tauber_May_2022_KW_25.jpg> .
+
+
+###  http://group12.org/places/baden-wurttemberg
+<http://group12.org/places/baden-wurttemberg> rdf:type owl:NamedIndividual ,
+                                                       dbo:State ;
+                                              dbo:description "Major cities include Stuttgart and Karlsruhe, known for industry and technology. Rich cultural heritage, with historic towns like Heidelberg and cultural events like the Stuttgart Wine Festival." ;
+                                              rdfs:label "Baden-wurttemberg" ;
+                                              foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/1/1b/Ludwigsburger_Schloss.jpg> .
+
+
+###  http://group12.org/places/bavaria
+<http://group12.org/places/bavaria> rdf:type owl:NamedIndividual ,
+                                             dbo:State ;
+                                    dbo:description "Known for its picturesque landscapes, including the Bavarian Alps.Munich, the capital, is famous for Oktoberfest, historic architecture, and cultural institutions." ;
+                                    rdfs:label "Bavaria" ;
+                                    foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/b/b9/Bavaria_2.jpg> .
+
+
+###  http://group12.org/places/berlin
+<http://group12.org/places/berlin> rdf:type owl:NamedIndividual ,
+                                            dbo:State ;
+                                   dbo:description "•	Although not a state but a separate city-state, Berlin is the capital and largest city of Germany that has a vibrant cultural scene, historical landmarks, and is a major political and economic hub." ;
+                                   rdfs:label "Berlin" ;
+                                   foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/8/83/Cityscape_Berlin.jpg> .
+
+
+###  http://group12.org/places/brandenburg
+<http://group12.org/places/brandenburg> rdf:type owl:NamedIndividual ,
+                                                 dbo:State ;
+                                        dbo:description "Located in the northeastern part of Germany, surrounding the capital city Berlin, known for its historical landmarks and natural landscapes, including lakes and forests." ;
+                                        rdfs:label "Brandenburg" ;
+                                        foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/f/f3/Jahrtausendbr%C3%BCcke_in_Brandenburg_an_der_Havel.jpg> .
+
+
+###  http://group12.org/places/bremen
+<http://group12.org/places/bremen> rdf:type owl:NamedIndividual ,
+                                            dbo:State ;
+                                   dbo:description "Home to the historic town center with the UNESCO-listed Roland statue.Bremen is known for its maritime history and the fairy tale of the 'Town Musicians of Bremen'" ;
+                                   rdfs:label "Bremen" ;
+                                   foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/e/e7/13-04-20-bremen-by-RalfR-026.jpg> .
+
+
+###  http://group12.org/places/eastern-germany
+<http://group12.org/places/eastern-germany> rdf:type owl:NamedIndividual ,
+                                                     dbo:Region ;
+                                            dbo:cultureDescription "Eastern Germany has preserved and revived traditional customs and folklore. Local festivals and events celebrate the region's cultural heritage, often showcasing traditional music, dance, and crafts. Efforts are made to revive historical buildings and landmarks, contributing to a sense of cultural continuity." ;
+                                            dbo:description "Eastern Germany consists of the states that were part of the former German Democratic Republic (GDR) during the Cold War. This region has a mix of landscapes, including plains, lakes, and some low mountain ranges. Cities like Berlin, Leipzig, and Dresden are located in the east. " ;
+                                            dbo:includesStates <http://group12.org/places/berlin> ,
+                                                               <http://group12.org/places/brandenburg> ,
+                                                               <http://group12.org/places/saxony> ,
+                                                               <http://group12.org/places/saxonyAnhalt> ,
+                                                               <http://group12.org/places/thuringia> ;
+                                            rdfs:label "Eastern germany" ;
+                                            foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/c/c5/Eastern_Germany_Regions_01.png> .
+
+
+###  http://group12.org/places/germany
+<http://group12.org/places/germany> rdf:type owl:NamedIndividual ,
+                                             dbo:Country ;
+                                    dbo:description "Germany is a country located in Central Europe and is divided into several regions, each with its own distinct characteristics.Germany warmly welcomes tourists with its diverse attractions, blending historic charm and modern vibrancy, offering a captivating experience through iconic landmarks, cultural festivals, and picturesque landscapes.Efficient transportation networks, embracing high-speed trains and well-maintained roads, make it easy for travelers to navigate the country's diverse regions. Germany's commitment to sustainability and preservation adds an extra layer of appeal, ensuring that visitors can not only enjoy the vibrant present but also appreciate the rich tapestry of the country's past." ;
+                                    dbo:image <https://upload.wikimedia.org/wikipedia/commons/f/f5/Flag_Of_Germany_%28Pantone%29.svg> ;
+                                    rdfs:label "Germany" .
+
+
+###  http://group12.org/places/hamburg
+<http://group12.org/places/hamburg> rdf:type owl:NamedIndividual ,
+                                             dbo:State ;
+                                    dbo:description "Germany's second-largest city, renowned for musical and theatrical productions." ;
+                                    rdfs:label "Hamburg" ;
+                                    foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/e/ed/Hamburg_Rathaus.jpg> .
+
+
+###  http://group12.org/places/hesse
+<http://group12.org/places/hesse> rdf:type owl:NamedIndividual ,
+                                           dbo:State ;
+                                  dbo:description "Frankfurt, the financial hub of Germany, is the largest city and the capital of Hesse. Diverse landscapes, including the Rhine River Valley and the Taunus Mountains." ;
+                                  rdfs:label "Hesse" ;
+                                  foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/7/70/LV_Hessen_Juni_2010.JPG> .
+
+
+###  http://group12.org/places/lower-saxony
+<http://group12.org/places/lower-saxony> rdf:type owl:NamedIndividual ,
+                                                  dbo:State ;
+                                         dbo:capital <http://group12.org/places/hannover> ;
+                                         dbo:description "Diverse landscapes include the North German Plain, hills, and the Harz Mountains.It is also Major economic and cultural center." ;
+                                         rdfs:label "Lower Saxony" ;
+                                         foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/6/6f/Spieka_%28Nordholz%29%2C_Lower_Saxony.jpg> .
+
+
+###  http://group12.org/places/mecklenburg-vorpommern
+<http://group12.org/places/mecklenburg-vorpommern> rdf:type owl:NamedIndividual ,
+                                                            dbo:State ;
+                                                   dbo:description "Popular tourist destinations include the historic city of Rostock and the seaside resorts on the islands of Rügen and Usedom,also rich in cultural history and architecture, with many medieval towns and castles." ;
+                                                   rdfs:label "Mecklenburg-Vorpommern" ;
+                                                   foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/f/fc/Mecklenburg-Vorpommern%2C_Schwerin%2C_Finanzministerium_M-V_NIK_4794.JPG> .
+
+
+###  http://group12.org/places/northern-germany
+<http://group12.org/places/northern-germany> rdf:type owl:NamedIndividual ,
+                                                      dbo:Region ;
+                                             dbo:cultureDescription "The culture in Northern Germany is influenced by its maritime history, with a strong emphasis on trade and seafaring. The Hanseatic League, a medieval trading alliance, had a significant impact on the development of many northern cities." ;
+                                             dbo:description "Northern Germany is characterized by flat landscapes, coastal areas along the North Sea and the Baltic Sea, and numerous lakes. The region includes cities like Hamburg, Bremen, and Hannover." ;
+                                             dbo:includesStates <http://group12.org/places/bremen> ,
+                                                                <http://group12.org/places/hamburg> ,
+                                                                <http://group12.org/places/lower-saxony> ,
+                                                                <http://group12.org/places/mecklenburg-vorpommern> ,
+                                                                <http://group12.org/places/schleswig-holstein> ;
+                                             rdfs:label "Northern Germany" ;
+                                             foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/3/39/North_Germany_Regions_01.png> .
+
+
+###  http://group12.org/places/northrhinewestphalia
+<http://group12.org/places/northrhinewestphalia> rdf:type owl:NamedIndividual ,
+                                                          dbo:State ;
+                                                 dbo:description "North Rhine-Westphalia is the most populous state in the country, known for its industrial cities, vibrant cultural scene, and the Rhine River. The state is an economic powerhouse and plays a significant role in Germany's industry and commerce." ;
+                                                 rdfs:label "Northrhinewestphalia" ;
+                                                 foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/3/30/Aerial_photographs_of_North_Rhine-Westphalia_2013_11.jpg> .
+
+
+###  http://group12.org/places/rhineland-palatinate
+<http://group12.org/places/rhineland-palatinate> rdf:type owl:NamedIndividual ,
+                                                          dbo:State ;
+                                                 dbo:description "Known for its vineyards, charming wine villages, and wine festivals. Mainz, the capital, and Koblenz are notable cities along the Rhine." ;
+                                                 rdfs:label "Rhineland-palatinate" ;
+                                                 foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/4/4a/Cochem%2C_Moselle_Valley_%28Moseltal%29%2C_Rhineland-Palatinate%2C_Western_Germany_%28May_14%2C_2018%29_02.jpg> .
+
+
+###  http://group12.org/places/saarland
+<http://group12.org/places/saarland> rdf:type owl:NamedIndividual ,
+                                              dbo:State ;
+                                     dbo:description "Saarland is a small state located in southwestern Germany, near the border with France. It has a rich history and cultural heritage. Saarbrücken is the capital and largest city. The region is known for its historical sites, picturesque landscapes, and a mix of German and French influences due to its proximity to France." ;
+                                     rdfs:label "Saarland" ;
+                                     foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/4/42/Landtag_des_Saarlandes.jpg> .
+
+
+###  http://group12.org/places/saxony
+<http://group12.org/places/saxony> rdf:type owl:NamedIndividual ,
+                                            dbo:State ;
+                                   dbo:description "Situated in eastern Germany, Saxony is known for its rich cultural heritage, including the city of Dresden with its historic architecture and the cultural city of Leipzig." ;
+                                   rdfs:label "Saxony" ;
+                                   foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/f/ff/Dresden-Semperoper.04.JPG> .
+
+
+###  http://group12.org/places/saxonyAnhalt
+<http://group12.org/places/saxonyAnhalt> rdf:type owl:NamedIndividual ,
+                                                  dbo:State ;
+                                         dbo:description "This central German state has a diverse landscape, including the Harz Mountains, known for its cultural and historical significance, with cities like Magdeburg and Wittenberg." ;
+                                         rdfs:label "Saxony Anhalt" ;
+                                         foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/e/e3/Innenministerium_Land_Sachsen-Anhalt_%28cropped%29.JPG> .
+
+
+###  http://group12.org/places/schleswig-holstein
+<http://group12.org/places/schleswig-holstein> rdf:type owl:NamedIndividual ,
+                                                        dbo:State ;
+                                               dbo:description "Characterized by a mix of coastal areas along the North Sea and the Baltic Sea." ;
+                                               dbo:includesCity <http://group12.org/places/kiel> ;
+                                               rdfs:label "Schleswig-Holstein" ;
+                                               foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/6/6f/Justizministerium_Schleswig-Holstein_.jpg> .
+
+
+###  http://group12.org/places/southern-germany
+<http://group12.org/places/southern-germany> rdf:type owl:NamedIndividual ,
+                                                      dbo:Region ;
+                                             dbo:cultureDescription "Southern Germany is often associated with a rich cultural heritage, including traditional Bavarian customs, beer gardens, and folk festivals. The region is known for its strong emphasis on craftsmanship and traditional industries." ;
+                                             dbo:description "Southern Germany is known for its diverse landscapes, including the Bavarian Alps, forests, and lakes. Major cities in this region include Munich, Stuttgart, and Nuremberg" ;
+                                             dbo:includesStates <http://group12.org/places/baden-wurttemberg> ,
+                                                                <http://group12.org/places/bavaria> ,
+                                                                <http://group12.org/places/hesse> ,
+                                                                <http://group12.org/places/rhineland-palatinate> ;
+                                             rdfs:label "Southern Germany" ;
+                                             foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/3/38/Southern_Germany_Regions_01.png> .
+
+
+###  http://group12.org/places/thuringia
+<http://group12.org/places/thuringia> rdf:type owl:NamedIndividual ,
+                                               dbo:State ;
+                                      dbo:description "Located in central Germany, Thuringia is known for its cultural contributions, including famous figures like Goethe and Schiller. The state capital is Erfurt." ;
+                                      rdfs:label "Thuringia" ;
+                                      foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/c/c2/Thuringia_Eisenach_asv2020-07_img23_Wartburg_Castle.jpg> .
+
+
+###  http://group12.org/places/western-germany
+<http://group12.org/places/western-germany> rdf:type owl:NamedIndividual ,
+                                                     dbo:Region ;
+                                            dbo:cultureDescription "Cities host a variety of events, festivals, and cultural activities, blending both traditional and contemporary elements. The carnival celebrations in cities like Cologne are notable for their vibrant and inclusive nature." ;
+                                            dbo:description "Western Germany comprises the states that were part of the former Federal Republic of Germany (FRG) during the Cold War. The region has a diverse landscape, including the Rhine River, low mountain ranges, and industrialized areas. Cities like Cologne, Frankfurt, and Düsseldorf are located in the west." ;
+                                            dbo:includesStates <http://group12.org/places/northrhinewestphalia> ,
+                                                               <http://group12.org/places/saarland> ;
+                                            rdfs:label "Western germany" ;
+                                            foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/d/d5/Western_Germany_Regions_01.png> .
+
+
+###  http://group12.org/places/germany/general-info
+<http://group12.org/places/germany/general-info> rdf:type owl:NamedIndividual ,
+                                                          dbo:CountryInfo ;
+                                                 dbo:countryCode "+49" ;
+                                                 dbo:currency "Euro" ;
+                                                 dbo:eastgermany_img "https://upload.wikimedia.org/wikipedia/commons/b/b1/Waldparkstra%C3%9Fe_11%2C_Dresden_%28624%29.jpg" ;
+                                                 dbo:german_map "https://upload.wikimedia.org/wikipedia/commons/a/a6/Germany%2C_administrative_divisions_de_-_colored.svg" ;
+                                                 dbo:image_main "https://upload.wikimedia.org/wikipedia/commons/6/6c/Aerial_view_of_Berlin_%2832881394137%29.jpg" ;
+                                                 dbo:northgermany_img "https://upload.wikimedia.org/wikipedia/commons/1/11/Wilhelmshaven_townhall_front_facing_north_Wilhelmshaven_Germany_03.jpg" ;
+                                                 dbo:southgermany_img "https://upload.wikimedia.org/wikipedia/commons/7/76/South_Markus_Kirsche_Hannover_Germany_Dec18_DSC05814.jpg" ;
+                                                 dbo:timeZone "GMT+1" ;
+                                                 dbo:visareq "Schengen visa" ;
+                                                 dbo:westgermany_img "https://upload.wikimedia.org/wikipedia/commons/8/83/Modern_architecture_of_D%C3%BCsseldorf%2C_Western_Germany%2C_Western_Europe._May_6%2C_2013._%282%29.jpg" .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#city
+:city rdf:type owl:NamedIndividual .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#events_festival
+:events_festival rdf:type owl:NamedIndividual .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#historical_cultural
+:historical_cultural rdf:type owl:NamedIndividual .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#museum
+:museum rdf:type owl:NamedIndividual .
+
+
+###  http://www.kr_paris.com/ontologies/tourism#natural_attractions
+:natural_attractions rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

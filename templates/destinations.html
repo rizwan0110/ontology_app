@@ -1,0 +1,72 @@
+<!-- templates/search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    .myLink {display: none}
+    </style>
+</head>
+<body class="w3-light-grey">
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+          <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b> KR & SW Project</b> &nbsp; &nbsp;<img src="{{ image }}"  style="width:10%; border: 2px solid white;" ></a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+          <a href="http://127.0.0.1:5000/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+          <a href="{{ url_for('regions_main') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EXPLORE BY REGIONS</a>
+          <a href="{{ url_for('destinations') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DESTINATION</a>
+          <a href="http://127.0.0.1:5000/attraction" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ATTRACTIONS</a>  
+          <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"></a>
+        </div>
+ 
+      </div>
+
+
+<body>
+</br>   </br>
+<div class="w3-container w3-white">
+    <div class="w3-panel w3-red w3-leftbar w3-padding-32">
+        <h1><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> Explore By Destinations</h6>
+      </div>
+   
+
+    {% for dest in dest_data %}
+        <div>
+        </br>
+        <style>
+            h2 {
+              text-align: left;
+            }
+            
+            p.main {
+              text-align: justify;
+            }
+            </style>
+            <div class="w3-card-4 w3-margin w3-white">
+              <div class="w3-container"></br>
+            <button class="w3-button w3-block w3-black w3-margin-bottom">
+            <h2>{{ dest['label'] }}</h2> </button>  
+            <div class="w3-half">      
+            <H4>{{ dest['description'] }}</h4></div>   <div class="w3-half">    
+            <img src="{{ dest['image'] }}" alt="{{ dest['label'] }} Image" style="max-width: 450px;"></br></br></div></div>
+        </div></div>  
+    {% endfor %}
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+  <h4><b>Knowledge Representation Semantic Web Project</b></h4>
+ 
+  <p>Created by <b>Group 12</b></a></p>
+</footer>
+
+</body>
+</html>
