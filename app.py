@@ -5,6 +5,7 @@ from rdflib import Graph, Namespace
 app = Flask(__name__)
 
 # Load RDF data from file
+# Moldify the path location of the rdf file.
 rdf_file_path = r'C:/Users/rizwa/Desktop/univ/S01-3-KR& SW/Project/kr_website/ontology.ttl'
 graph = Graph()
 graph.parse(rdf_file_path, format='turtle')
